@@ -6,6 +6,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const Piechart = () => {
   const [categories, setCategories] = useState([]); // contains all the available categories
   const [numberofproducts, setNumberOfProducts] = useState([]); // total number of products.
+  const[loading, setLoading]=useState(true);
   // fetching the categories and products
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +31,7 @@ const Piechart = () => {
             }
           }
           setNumberOfProducts(productCounts);
+          setLoading(false);
         } else {
           console.error("Error fetching categories:", dataCategories);
         }
@@ -42,7 +44,14 @@ const Piechart = () => {
   return (
     <>
       <h1>Pie chart of product count per category</h1>
-      <h6>(This may take a few seconds ......)</h6>
+     { loading && ( <>
+     <h6>This may take a few seconds ......</h6><br/>
+     <h6>Loading . . . . . . . . . . . . . . .</h6>
+     </>  
+     )
+     
+  
+     }
       <Pie
         data={{
           labels: categories,

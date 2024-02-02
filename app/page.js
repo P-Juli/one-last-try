@@ -7,12 +7,14 @@ atuny0
 import { useEffect, useState } from "react";
 import Products from "../component/products";
 import './page.css'
+import Link from "next/link";
 export default function Home() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
+  const[errorMessage, setErrorMessage ]=useState('')
 
   const userNameHandler = (event) => {
     setUsername(event.target.value);
@@ -49,6 +51,7 @@ export default function Home() {
       localStorage.setItem("isLoggedIn", "true")
     } else {
       console.log("something went wrong");
+      setErrorMessage(data.message)
     }
   };
 // dealiing with the local storage
@@ -83,11 +86,21 @@ export default function Home() {
                 />
               </div>
             </div>
+
           </div>
           <button type="submit" className="submitButton">
             Login
-          </button>
+          </button><br/>
+          {errorMessage && (
+            <>
+          <h4 style={{ color: 'red' }}>{errorMessage}</h4>
+          <Link href='/instruction'>Click here for Login credentials</Link>
+          </>
+          )}
+
+
         </form>
+
       )}
       {/* change ! here */}
       {authenticated  && <Products email={email} name={name} />}
