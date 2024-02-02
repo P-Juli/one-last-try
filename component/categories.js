@@ -8,7 +8,7 @@ const Categories = (props) => {
   const categorySelector = () => {
     props.setSelectedCategory(props.category);
     
-   // props.setCategoriesButtonClicked(true)//this will hide the list of categories.
+
   };
 
   return (
