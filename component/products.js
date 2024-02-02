@@ -159,34 +159,34 @@ const pieChartHandler = () => {
           </ol>
           <div className="buttons-container">
             <button className="button" onClick={() => setPageNumber(0)}>
-              1-10
+              1
             </button>
             <button className="button" onClick={() => setPageNumber(10)}>
-              11-20
+              2
             </button>
             <button className="button" onClick={() => setPageNumber(20)}>
-              21-30
+              3
             </button>
             <button className="button" onClick={() => setPageNumber(30)}>
-              31-40
+              4
             </button>
             <button className="button" onClick={() => setPageNumber(40)}>
-              41-50
+              5
             </button>
             <button className="button" onClick={() => setPageNumber(50)}>
-              51-60
+              6
             </button>
             <button className="button" onClick={() => setPageNumber(60)}>
-              61-70
+              7
             </button>
             <button className="button" onClick={() => setPageNumber(70)}>
-              71-80
+              8
             </button>
             <button className="button" onClick={() => setPageNumber(80)}>
-              81-90
+              9
             </button>
             <button className="button" onClick={() => setPageNumber(90)}>
-              91-100
+              10
             </button>
           </div>
         </>
